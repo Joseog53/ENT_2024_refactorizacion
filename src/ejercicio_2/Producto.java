@@ -1,6 +1,6 @@
 package ejercicio_2;
 
-public class Producto extends Tienda {
+public class Producto   {
 
 	 public  void agregarProducto(Producto producto) {
 	        // Lógica para agregar un producto

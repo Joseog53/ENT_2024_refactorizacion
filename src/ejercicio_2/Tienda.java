@@ -2,7 +2,7 @@ package ejercicio_2;
 
 import java.util.List;
 
-public abstract class Tienda {
+public  class Tienda {
 
 	private List<Producto> productos;
     private List<Cliente> clientes;
@@ -28,10 +28,7 @@ public abstract class Tienda {
         // Lógica para realizar un pedido
     }
 
-    public double calcularPrecioTotalPedido(Pedido pedido) {
-		return 0;
-        // Lógica para calcular el precio total de un pedido
-    }
+   
 
     // Otros métodos relacionados con la gestión de la tienda
 
