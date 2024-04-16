@@ -3,19 +3,9 @@ package ejercicio_1;
 public class Calculadora {
 
 	
-	    public int sumar(int a, int b) { 
+	    public int sumar(int sumando1, int sumando2) { 
 
-	        int resultado = a + b; 
-
-	        return resultado; 
-
-	    } 
-
-	 
-
-	    public int restar(int a, int b) { 
-
-	        int resultado = a - b; 
+	        int resultado = sumando1 + sumando2; 
 
 	        return resultado; 
 
@@ -23,9 +13,9 @@ public class Calculadora {
 
 	 
 
-	    public int multiplicar(int a, int b) { 
+	    public int restar(int minuendo, int sustraendo) { 
 
-	        int resultado = a * b; 
+	        int resultado = minuendo - sustraendo; 
 
 	        return resultado; 
 
@@ -33,33 +23,39 @@ public class Calculadora {
 
 	 
 
-	    public int dividir(int a, int b) { 
-	    	try {
+	    public int multiplicar(int factor1 , int factor2) { 
+
+	        int resultado = factor1 * factor2; 
+
+	        return resultado; 
+
+	    } 
+
+	 
+
+	    public int dividir(int dividendo, int divisor) { 
+	    	
 	        
-	    		if (b == 0) {
+	    		if (divisor == 0) {
 	               
-	            	throw new Exception_dividirPorCero("Error: No se puede dividir por cero.");
+	    			//TODO DIVISOR POR CERO¿LANZAR EXCEPCION?
+	            	return 0;
 	            }
 	    		
 	    		else {
 	               
-	            	int resultado = a / b;
+	            	int resultado = dividendo / divisor;
 	                return resultado;
 	            }
 	       
-	    	} catch (Exception_dividirPorCero e) {
-	           
-	    		System.out.println(e.getMessage());
-	            
-	    		return 0; 
-	        }
+	    	} 
 
 	    } 
 
 	 
 
 
-	    } 
+	    
 
 	
 
