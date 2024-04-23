@@ -4,42 +4,35 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GestorAlmacen {
-	
-	public static final boolean AÑADIR = true;
-	public static final boolean ELIMINAR = false;
+
+	public static final int ADD = 1000;
+	public static final int REMOVE = 2000;
 
 	private List<String> productos = new ArrayList<>();
 
-	public void manejarProducto(String producto, boolean agregar) throws Exception {
+	public void manejarProducto(String producto, int operacion) throws Exception {
 
-		if (AÑADIR) {
+		if (!productos.contains(producto) && operacion == REMOVE) {
 
-			if (!productos.contains(producto)) {
-
-				productos.add(producto);
-
-				System.out.println("Producto '" + producto + "' agregado al almacén.");
-			}
-
-			else {
-
-				System.out.println("El producto '" + producto + "' ya existe en el almacén.");
-			}
+			productos.remove(producto);
+		} else if (!productos.contains(producto) && operacion == ADD) {
+			productos.add(producto);
 		}
 
-		else {
+		/*
+		 * bloque de posibles errores
+		 */
+		else if (operacion == ADD) {
 
-			if (productos.contains(producto)) {
-
-				productos.remove(producto);
-
-				System.out.println("Producto '" + producto + "' eliminado del almacén.");
-			}
-
-			else {
-
-				throw new Exception("El producto '" + producto + "' no existe en el almacén.");
-			}
+			throw new Exception("Imposible añadir, el producto ya estaba");
 		}
+
+		else if (operacion == REMOVE) {
+
+			throw new Exception("Imposible borrar, el producto no está");
+		}
+
+		else
+			throw new Exception("Operación no soportada");
 	}
 }
