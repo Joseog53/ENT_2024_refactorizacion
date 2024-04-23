@@ -2,16 +2,18 @@ package ejercicio4;
 
 public class Calculadora {
 
+	public static final int SUMA = 1000;
+	public static final int RESTA = 2000;
 	
 
-	public int operacion(int a, int b, String operacion) throws Exception {
+	public int operacion(int operador1, int operador2, int operacion) throws Exception {
        
 		switch (operacion) {
 		
-		case "+": return a + b;
+		case SUMA: return operador1 + operador2;
           
        
-		case "-": return a - b;
+		case RESTA: return operador1 - operador2;
             
           
 		default: throw new Exception("Operación errónea: " + operacion);
