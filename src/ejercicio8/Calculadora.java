@@ -28,13 +28,7 @@ public class Calculadora {
 
 		}
 
-		if (divisor == 0) {
-
-			System.out.println("Error: No se puede dividir por cero.");
-
-			return 0;
-
-		}
+		
 
 		return dividendo / divisor;
 
